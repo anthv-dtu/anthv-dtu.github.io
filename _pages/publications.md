@@ -14,9 +14,9 @@ nav_order: 3
   <a href="https://orcid.org/0009-0007-8597-6705" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID">
     <i class="ai ai-orcid"></i>
   </a>
-  <!-- ResearchGate (optional):
-  <a href="https://www.researchgate.net/profile/YOUR-PROFILE" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate"><i class="ai ai-researchgate"></i></a>
-  -->
+  <a href="https://www.scopus.com/authid/detail.uri?authorId=60243869000" target="_blank" rel="noopener" title="Scopus" aria-label="Scopus">
+    <i class="ai ai-scopus"></i>
+  </a>
   <a href="https://arxiv.org/search/?searchtype=author&query=Vi%C3%A9%2C+Antoine+Thibault" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv">
     <i class="ai ai-arxiv"></i>
   </a>
@@ -29,44 +29,47 @@ nav_order: 3
   </a>
 </div>
 
+{% comment %}
+Same counting rule as the CREA group site: IFAC-PapersOnLine articles count as conference papers.
+{% endcomment %}
 {% capture total_count %}{% bibliography_count -f papers %}{% endcapture %}
-{% capture journal_count %}{% bibliography_count -f papers --query @article %}{% endcapture %}
-{% capture conference_count %}{% bibliography_count -f papers --query @inproceedings @conference %}{% endcapture %}
+{% capture journal_count %}{% bibliography_count -f papers --query @article[journal != IFAC-PapersOnLine] %}{% endcapture %}
+{% capture conference_count %}{% bibliography_count -f papers --query @inproceedings @conference @article[journal = IFAC-PapersOnLine] %}{% endcapture %}
 {% capture preprint_count %}{% bibliography_count -f papers --query @misc @unpublished %}{% endcapture %}
 {% capture thesis_count %}{% bibliography_count -f papers --query @phdthesis @mastersthesis @thesis %}{% endcapture %}
+{% assign journal_n = journal_count | strip | plus: 0 %}
+{% assign conference_n = conference_count | strip | plus: 0 %}
+{% assign preprint_n = preprint_count | strip | plus: 0 %}
+{% assign thesis_n = thesis_count | strip | plus: 0 %}
 
 <div class="publications">
 
 <p class="publication-counts">
-  <strong>{{ total_count | strip }}</strong> total publications ·
-  <strong>{{ journal_count | strip }}</strong> journal articles ·
-  <strong>{{ conference_count | strip }}</strong> conference papers ·
-  <strong>{{ preprint_count | strip }}</strong> preprints
+  <strong>{{ total_count | strip }}</strong> total publications · <strong>{{ journal_n }}</strong> journal articles ·
+  <strong>{{ conference_n }}</strong> conference papers
+  {%- if preprint_n > 0 %} · <strong>{{ preprint_n }}</strong> preprints{% endif %}
+  {%- if thesis_n > 0 %} · <strong>{{ thesis_n }}</strong> theses{% endif %}
 </p>
 
-{% assign n = journal_count | strip | plus: 0 %}
-{% if n > 0 %}
+{% if journal_n > 0 %}
 
 <h2>Journal Articles</h2>
-{% bibliography -f papers -q @article %}
+{% bibliography -f papers -q @article[journal != IFAC-PapersOnLine] %}
 {% endif %}
 
-{% assign n = conference_count | strip | plus: 0 %}
-{% if n > 0 %}
+{% if conference_n > 0 %}
 
 <h2>Conference Papers</h2>
-{% bibliography -f papers -q @inproceedings @conference %}
+{% bibliography -f papers -q @inproceedings @conference @article[journal = IFAC-PapersOnLine] %}
 {% endif %}
 
-{% assign n = preprint_count | strip | plus: 0 %}
-{% if n > 0 %}
+{% if preprint_n > 0 %}
 
 <h2>Preprints</h2>
 {% bibliography -f papers -q @misc @unpublished %}
 {% endif %}
 
-{% assign n = thesis_count | strip | plus: 0 %}
-{% if n > 0 %}
+{% if thesis_n > 0 %}
 
 <h2>Theses</h2>
 {% bibliography -f papers -q @phdthesis @mastersthesis @thesis %}
