@@ -1,13 +1,7 @@
 cv:
   name: Antoine Thibault Vié
-  label: PhD Student, DTU Electro
   email: anthv@dtu.dk
   location: Kongens Lyngby, Denmark
-  image: ""
-  summary: >-
-    PhD researcher at DTU Electro specializing in advanced control and estimation for resilient ship–shore communication systems
-    and autonomous maritime applications. Expertise in robust, optimal and nonlinear control, state estimation, and the modelling
-    of complex dynamical systems.
 
   social_networks:
     - network: LinkedIn
