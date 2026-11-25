@@ -253,6 +253,14 @@ html[data-theme="dark"] {
   color: var(--global-theme-color);
 }
 
+.project-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0 0 1.25rem;
+}
+
 .research-projects-link a {
   font-size: 1.25rem;
   font-weight: 500;
