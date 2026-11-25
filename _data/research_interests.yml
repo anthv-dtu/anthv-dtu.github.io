@@ -1,0 +1,31 @@
+# Research areas shown on the Research page (same areas as the CREA group site,
+# https://dimpapageorgiou.github.io/research/, without Resilient Renewable Energy Systems).
+- title: Safe Mapping Inversion
+  image: /assets/img/research/safe-mapping-inversion.webp
+  description: >
+    Control and estimation through safe inversion of nonlinear mappings,
+    with particular emphasis on singularities, constraints, and topology.
+
+- title: Sliding Mode Control and Estimation
+  image: /assets/img/research/sliding-mode.webp
+  description: >
+    Sliding-mode methods for robust control and state estimation in
+    uncertain nonlinear systems.
+
+- title: Diagnosis & Fault-tolerant Control
+  image: /assets/img/research/diagnosis-ftc.webp
+  description: >
+    Model-based methods for fault detection, diagnosis, and condition
+    monitoring of complex dynamical systems.
+
+- title: Nonlinear and Adaptive Control
+  image: /assets/img/research/nonlinear-adaptive-control.webp
+  description: >
+    Nonlinear and adaptive control methods for systems with uncertainty,
+    changing dynamics, and demanding performance requirements.
+
+- title: Maritime Remote & Autonomous Systems
+  image: /assets/img/research/maritime-autonomy.webp
+  description: >
+    Control, estimation, and decision-making methods for autonomous
+    and remotely operated maritime systems.

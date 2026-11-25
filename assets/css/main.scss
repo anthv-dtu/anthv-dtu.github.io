@@ -1,0 +1,202 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+/* -----------------------------------------------------------------------------
+ * LOCAL OVERRIDE of al_folio_core's assets/css/main.scss (copied from 1.0.15).
+ * The imports below are identical to the gem's; everything after
+ * "CREA group styling" is site-specific. When upgrading al_folio_core,
+ * re-copy the gem's import list if it changes.
+ * -------------------------------------------------------------------------- */
+
+@use "sass:math";
+@use "sass:string";
+
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default:  "930px" }}
+);
+
+@use "themes";
+@use "layout";
+
+// Core styles organized by usage
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+// Other specialized styles
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+/*******************************************************************************
+ * CREA group styling — matches https://dimpapageorgiou.github.io/
+ ******************************************************************************/
+
+:root {
+  --global-navbar-bg-color: #e8f1f5;
+  --global-theme-color: #2f6f9f;
+  --global-hover-color: #24597f;
+}
+
+html[data-theme="dark"] {
+  --global-navbar-bg-color: #1b2b34;
+  --global-theme-color: #2698ba;
+  --global-hover-color: #2698ba;
+}
+
+// Navbar
+#navbar {
+  background-color: var(--global-navbar-bg-color) !important;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+/******************************************************************************
+ * Publications
+ ******************************************************************************/
+
+.publications {
+  margin-top: 1rem;
+
+  > h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--global-divider-color);
+    color: var(--global-theme-color);
+    font-size: 1.5rem;
+  }
+
+  ol.bibliography li {
+    .title {
+      font-weight: bolder;
+    }
+
+    .abbr abbr {
+      background-color: var(--global-theme-color);
+    }
+
+    .author > em {
+      border-bottom: 1px solid;
+      font-style: normal;
+    }
+  }
+}
+
+.publication-counts {
+  color: var(--global-text-color-light);
+  margin-bottom: 1.5rem;
+
+  strong {
+    color: var(--global-theme-color);
+  }
+}
+
+/******************************************************************************
+ * Academic profiles (icon row on the Publications page)
+ ******************************************************************************/
+
+.academic-profiles {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  flex-wrap: wrap;
+  margin: 0.75rem 0 1.5rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: var(--global-text-color-light);
+    text-decoration: none;
+    transition:
+      color 0.15s ease,
+      transform 0.15s ease;
+
+    &:hover {
+      color: var(--global-theme-color);
+      transform: translateY(-2px);
+    }
+  }
+
+  .publications-pdf-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--global-theme-color);
+    background: transparent;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 5px;
+    text-decoration: none !important;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+
+    &:hover {
+      color: var(--global-bg-color);
+      background-color: var(--global-theme-color);
+      transform: none;
+    }
+  }
+}
+
+/******************************************************************************
+ * Research areas (cards on the Research page)
+ ******************************************************************************/
+
+.research-areas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 1rem 0 1.5rem;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.research-area-card {
+  height: 100%;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--global-bg-color);
+}
+
+.research-area-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.research-area-content {
+  padding: 0.8rem 1rem 1rem;
+
+  h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.25rem;
+    color: var(--global-theme-color);
+  }
+
+  // Same as the group site: titles only, descriptions kept in the data file.
+  p {
+    display: none;
+  }
+}
+
+.research-projects-link a {
+  font-size: 1.25rem;
+  font-weight: 500;
+}

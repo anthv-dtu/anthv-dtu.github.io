@@ -1,12 +1,11 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: Research and engineering projects.
+description:
 nav: true
-nav_order: 3
-display_categories: [research, other]
-horizontal: false
+nav_order: 2
+horizontal: true
 ---
 
 <!-- pages/projects.md -->

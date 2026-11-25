@@ -2,8 +2,8 @@
 layout: page
 title: Ship-shore communication
 description: Intelligent control of ship-shore communication systems for remote situational awareness (PhD project)
+img: assets/img/research/maritime-autonomy.webp
 importance: 1
-category: research
 related_publications: true
 ---
 
