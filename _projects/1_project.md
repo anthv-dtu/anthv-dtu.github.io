@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Ship-shore communication
-description: Intelligent control of ship-shore communication systems for remote situational awareness (PhD project)
+title: Ship-Shore Communication
+description: Intelligent control of ship-shore communication systems for remote situational awareness (PhD project, DTU Electro, 2024 – 2027)
 img: assets/img/research/maritime-autonomy.webp
 importance: 1
 related_publications: true
