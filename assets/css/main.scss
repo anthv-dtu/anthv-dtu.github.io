@@ -57,6 +57,28 @@ html[data-theme="dark"] {
   border-bottom: 1px solid var(--global-divider-color);
 }
 
+// Search button: hide the "ctrl k" shortcut label, keep the magnifying-glass icon.
+#search-toggle .nav-link {
+  font-size: 0;
+
+  i {
+    font-size: 1rem;
+  }
+}
+
+// Theme button: the theme's "system" half-sun/half-moon icon renders blank with
+// Font Awesome 7, so the button looked missing. Always show the icon of the
+// current mode (sun = light, moon = dark); clicking switches to the other one
+// (see assets/js/theme.js).
+html[data-theme-setting="system"] #light-toggle-system {
+  display: none !important;
+}
+
+html[data-theme-setting="system"][data-theme="light"] #light-toggle-light,
+html[data-theme-setting="system"][data-theme="dark"] #light-toggle-dark {
+  display: inline-block !important;
+}
+
 /******************************************************************************
  * Publications
  ******************************************************************************/
