@@ -9,7 +9,7 @@ subtitle: >-
 
 profile:
   align: right
-  image: prof_pic.jpg # TODO: replace assets/img/prof_pic.jpg with your own photo
+  image: prof_pic.webp
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>DTU Electro</p>
