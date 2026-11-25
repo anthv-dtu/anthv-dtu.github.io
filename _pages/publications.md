@@ -8,9 +8,13 @@ nav_order: 3
 ---
 
 <div class="academic-profiles">
-  <!-- Add your profiles when you have them (same icons as the CREA group site):
-  <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-  <a href="https://orcid.org/YOUR-ORCID" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
+  <a href="https://scholar.google.com/citations?user=UXzXSKwAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar">
+    <i class="ai ai-google-scholar"></i>
+  </a>
+  <a href="https://orcid.org/0009-0007-8597-6705" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID">
+    <i class="ai ai-orcid"></i>
+  </a>
+  <!-- ResearchGate (optional):
   <a href="https://www.researchgate.net/profile/YOUR-PROFILE" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate"><i class="ai ai-researchgate"></i></a>
   -->
   <a href="https://arxiv.org/search/?searchtype=author&query=Vi%C3%A9%2C+Antoine+Thibault" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv">
